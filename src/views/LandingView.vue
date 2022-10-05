@@ -31,12 +31,10 @@
     <h2>
       <em>may you rejoice with your friends</em>
     </h2>
-    <TarotCard />
   </div>
 </template>
 
 <script setup lang="ts">
-import TarotCard from "@/components/tarot/TarotCard.vue";
 import Portrait from "@/components/ui/Portrait.vue";
 </script>
 
