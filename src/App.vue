@@ -1,23 +1,77 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import LandingView from "./views/LandingView.vue";
-</script>
-
 <template>
-  <LandingView />
+  <GalaxyAnimation />
+  <MainNav />
+  <div id="app-box">
+    <router-view v-slot="{ Component }">
+      <transition name="flipfade">
+        <component :is="Component" :key="$route.name"></component>
+      </transition>
+    </router-view>
+  </div>
+  <footer>
+    <p>Website created by <a href="https://lavrat.space">Lavra Tamutus</a>.</p>
+    <!-- <p>
+        Behold Chaos at the Heart of Orion, courtesy of the
+        <a href="https://images.nasa.gov/details-PIA01322"
+          >Hubble Space Telescope</a
+        >
+      </p> -->
+  </footer>
 </template>
 
+<script setup lang="ts">
+import MainNav from "@/components/ui/MainNav.vue";
+import GalaxyAnimation from "@/components/space/GalaxyAnimation.vue";
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+#app-box {
+  margin: 70px 8vw 23vh 8vw;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+/* animation classes */
+.flipfade-enter-active,
+.flipfade-leave-active {
+  transition: opacity 1.3s, transform 1.7s;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.flipfade-enter-active {
+  transform-origin: right;
+}
+.flipfade-leave-active {
+  position: absolute;
+  transform-origin: left;
+  left: calc(8vw + 40px);
+  width: calc(100vw - 16vw - 80px);
+}
+
+.flipfade-enter-from {
+  opacity: 0;
+  transform: rotate3d(0.05, 1, 0, 180deg);
+}
+.flipfade-leave-to {
+  opacity: 0;
+  transform: rotate3d(0.05, -1, 0, 180deg);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 850px) {
+  #app-box {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .flipfade-leave-active {
+    width: calc(100vw - 50px);
+    left: 25px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #app-box {
+    padding: 30px 10px;
+  }
 }
 </style>
