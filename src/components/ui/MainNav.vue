@@ -2,7 +2,7 @@
   <nav>
     <router-link
       v-for="menuItem of menuItems"
-      class="menu-item"
+      :class="`menu-item ${menuItem.link === currentPath ? 'focused' : ''}`"
       :to="menuItem.link"
       >{{ menuItem.title }}</router-link
     >
@@ -10,6 +10,20 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from "vue";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const currentPath = ref(route.path);
+
+watch(
+  () => route.path,
+  async (newPath) => {
+    console.log(newPath);
+    currentPath.value = newPath;
+  }
+);
+
 const menuItems = [
   {
     title: "Home",
@@ -71,7 +85,8 @@ nav {
   transition: color 0.35s ease,
     background-position 1.2s cubic-bezier(0.2, 1, 0.8, 0.9);
 }
-.menu-item:hover {
+.menu-item:hover,
+.menu-item.focused {
   background-position: 0px 115%;
   color: white;
 }

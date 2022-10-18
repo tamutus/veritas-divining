@@ -1,12 +1,11 @@
 <template>
   <div class="illustrated-content">
-    <div class="content">
-      <slot class="content"></slot>
-    </div>
     <img
       :src="imageSource"
       :alt="altText || 'Tell me to add alt text to this image!'"
     />
+
+    <slot class="content"></slot>
   </div>
 </template>
 
@@ -24,7 +23,7 @@ const imageSource = computed(() => `/${props.imageFileName}`);
 .illustrated-content {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center;
   align-items: center;
 }
@@ -32,11 +31,17 @@ const imageSource = computed(() => `/${props.imageFileName}`);
   flex: 1 1 65%;
 }
 img {
-  max-height: 500px;
-  max-width: 50%;
-  object-fit: cover;
-  border-radius: 50px;
-  margin-left: 30px;
-  flex: 1 1 30%;
+  max-height: 50vh;
+  max-width: 50vw;
+  object-fit: contain;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+@media screen and (max-height: 280px) {
+  img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 }
 </style>

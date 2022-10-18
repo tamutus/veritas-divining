@@ -1,14 +1,40 @@
 <template>
   <div>
     <h1>What I Offer You – Mx. Cres' Services</h1>
-    <!-- <hr /> -->
-    <Quote>
-      <p>
-        Want some background on Tarot?
-        <router-link to="/divination">Click here</router-link>
-      </p>
-    </Quote>
+    <section>
+      <Portrait
+        image-file-name="Cres with cards transparent.png"
+        alt-text="Reader Cres holding a hand of 5 Tarot cards"
+      >
+      </Portrait>
+      <Quote>
+        <p>
+          Want some background on Tarot? Curious about other spreads I do?
+          <router-link to="/divination">Click Here</router-link>
+        </p>
+      </Quote>
+    </section>
 
+    <section>
+      <Portrait
+        image-file-name="Pendulum.jpg"
+        alt-text="Blue pendulum on a silver chain, laying on a blue, space-print cloth"
+      >
+        <Pricing cost="7"> One Pendulum Question </Pricing>
+        <h3>
+          If you are seeking an answer to a yes or no question, a pendulum
+          reading is the way to go.
+        </h3>
+      </Portrait>
+      <!-- <h3>
+        Do you want to know what you should and should not do for a specific
+        situation?
+      </h3>
+      <p>
+        This tarot reading uses three cards that will offer a snapshot of the
+        most pertinent concerns and energies surrounding your Query.
+      </p> -->
+    </section>
     <section>
       <Pricing cost="15"> One, Three-Card Tarot Reading </Pricing>
       <h3>
@@ -22,6 +48,11 @@
     </section>
     <section>
       <Pricing cost="25"> One, Five-Card Tarot Reading </Pricing>
+      <Portrait
+        image-file-name="Spread on red.jpg"
+        alt-text="Tarot cards, face-down, in a Cross of truth "
+      >
+      </Portrait>
       <h3>
         A Cross of Truth spread utilizing five cards that will offer a
         well-rounded understanding of a specific situation.
@@ -51,13 +82,18 @@
       </p>
 
       <Pricing cost="5" :add-on="true"> ADD ON: Adjustment Card</Pricing>
-      <p>
-        A final card can be drawn after your reading to show you how to change
-        your future. If the probable outcome indicated in your reading is not
-        favorable to you, have an adjustment card drawn to see how you can alter
-        your life path and what corresponding Affirmations your Adjustment Card
-        has to offer you.
-      </p>
+      <Portrait
+        image-file-name="Tarot card back.jpg"
+        alt-text="Starry blue back of a tarot card"
+      >
+        <p>
+          A final card can be drawn after your reading to show you how to change
+          your future. If the probable outcome indicated in your reading is not
+          favorable to you, have an adjustment card drawn to see how you can
+          alter your life path and what corresponding Affirmations your
+          Adjustment Card has to offer you.
+        </p>
+      </Portrait>
 
       <Pricing cost="6.00 ~ $30" :add-on="true">
         ADD ON: Supplemental Oracle Card Reading
@@ -112,6 +148,7 @@
 <script setup lang="ts">
 import Quote from "@/components/ui/Quote.vue";
 import Pricing from "@/components/ui/Pricing.vue";
+import Portrait from "@/components/ui/Portrait.vue";
 </script>
 
 <style scoped>

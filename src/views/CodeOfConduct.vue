@@ -292,6 +292,5 @@ import Quote from "@/components/ui/Quote.vue";
 <style scoped>
 h4 {
   font-family: Comfortaa, sans-serif;
-  transform: skew(3deg);
 }
 </style>

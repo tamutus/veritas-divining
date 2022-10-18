@@ -9,6 +9,7 @@
     </router-view>
   </div>
   <footer>
+    <p><a href="https://cattyfae.carrd.co">Mx. Cres Veritas</a> 2022</p>
     <p>Website created by <a href="https://lavrat.space">Lavra Tamutus</a>.</p>
     <!-- <p>
         Behold Chaos at the Heart of Orion, courtesy of the
@@ -35,27 +36,28 @@ import GalaxyAnimation from "@/components/space/GalaxyAnimation.vue";
 /* animation classes */
 .flipfade-enter-active,
 .flipfade-leave-active {
-  transition: opacity 1.3s, transform 1.7s;
+  transition: opacity 1.3s, transform 0.8s;
 }
 /* ensure leaving items are taken out of layout flow so that moving
    animations can be calculated correctly. */
 .flipfade-enter-active {
-  transform-origin: right;
+  transform-origin: center top;
+  transition-delay: 0.4s;
 }
 .flipfade-leave-active {
   position: absolute;
-  transform-origin: left;
+  transform-origin: center top;
   left: calc(8vw + 40px);
   width: calc(100vw - 16vw - 80px);
 }
 
 .flipfade-enter-from {
   opacity: 0;
-  transform: rotate3d(0.05, 1, 0, 180deg);
+  transform: translateY(-500px) scale(1.2);
 }
 .flipfade-leave-to {
   opacity: 0;
-  transform: rotate3d(0.05, -1, 0, 180deg);
+  transform: translateY(500px) scale(0.6);
 }
 
 /* Responsiveness */

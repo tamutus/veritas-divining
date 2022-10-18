@@ -3,10 +3,14 @@
     <h1>Specifics of Divination Services</h1>
 
     <section>
-      <h2>Pendulum Reading</h2>
-      <ul>
-        <li>(One) “Yes/No” Query</li>
-      </ul>
+      <Portrait image-file-name="Pendulum.jpg" alt-text="Pendulum">
+        <div>
+          <h2>Pendulum Reading</h2>
+          <ul>
+            <li>(One) “Yes/No” Query</li>
+          </ul>
+        </div>
+      </Portrait>
     </section>
 
     <section>
@@ -82,23 +86,13 @@
         <li>What’s helping you</li>
         <li>A Potential Outcome</li>
       </ol>
-
-      <h3>6-Cards</h3>
-
-      <h4>Expressing Love: Improve Your Connection with Others</h4>
-      <ol>
-        <li>Loving energy to release</li>
-        <li>How to express love</li>
-        <li>How to be a better listener</li>
-        <li>Something to integrate so you can better understand others</li>
-        <li>How to be more compassionate</li>
-        <li>Something you still need to learn about love</li>
-      </ol>
     </section>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Portrait from "@/components/ui/Portrait.vue";
+</script>
 
 <style scoped>
 h4 {

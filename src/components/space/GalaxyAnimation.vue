@@ -19,7 +19,6 @@
           />
         </g>
       </svg>
-      <h1 id="galaxy-describer">Hello World</h1>
     </div>
     <GalaxyControls
       @reset-animation="toggleExistence"
@@ -71,10 +70,9 @@ let space: d3.Selection<BaseType, unknown, HTMLElement, any>,
 // Dynamic variables, counters
 let starCount: number = 0,
   nebula: NodeJS.Timeout, // tracks timeouts so the animation can be reset
-  moving: Ref<boolean> = ref(true),
-  twinkling: Ref<boolean> = ref(true),
   exists: Ref<boolean> = ref(true),
-  eventResponse: NodeJS.Timeout;
+  moving: Ref<boolean> = ref(true),
+  twinkling: Ref<boolean> = ref(true);
 
 // Generate stars at uneven intervals to sprinkle twinkles organically.
 function generateStar(
@@ -101,6 +99,18 @@ function generateStar(
   }
 }
 
+function toggleExistence() {
+  if (exists.value) {
+    clearTimeout(nebula);
+    stars.selectAll(".star").remove();
+    starCount = 0;
+    exists.value = false;
+  } else {
+    generateStar(starCycle, stars);
+    exists.value = true;
+  }
+}
+
 function toggleGalaxyMotion() {
   if (galaxy.value) {
     if (moving.value) {
@@ -117,18 +127,6 @@ function toggleGalaxyMotion() {
   console.log(galaxy);
 }
 
-function toggleExistence() {
-  if (exists.value) {
-    clearTimeout(nebula);
-    stars.selectAll(".star").remove();
-    starCount = 0;
-    exists.value = false;
-  } else {
-    generateStar(starCycle, stars);
-    exists.value = true;
-  }
-}
-
 function toggleTwinkle() {
   if (twinkling.value) {
     // logEventToUser("They will not twinkle");
@@ -137,21 +135,6 @@ function toggleTwinkle() {
     // logEventToUser("They twinkle again");
     twinkling.value = true;
   }
-}
-
-function logEventToUser(message: string) {
-  eventResponder.classed("rendering", false);
-  eventResponder.text(message);
-  if (eventResponse) {
-    clearTimeout(eventResponse);
-  }
-  eventResponse = setTimeout(() => {
-    eventResponder.classed("rendering", true);
-    eventResponse = setTimeout(() => {
-      eventResponder.classed("rendering", false);
-      // 3s disappear animation plus 3 seconds delay in #debugger.rendering CSS
-    }, 6000);
-  }, 5);
 }
 
 // Helper functions
@@ -196,14 +179,6 @@ onMounted(() => {
   position: absolute;
   left: 50%;
   top: 30%;
-}
-
-#stars {
-  animation-play-state: paused;
-}
-
-#stars.twinkling {
-  animation-play-state: running;
 }
 
 .star {

@@ -65,7 +65,7 @@ const twinkleTogglerText = computed(() => {
   left: 20px;
   z-index: 3;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row wrap-reverse;
   align-items: flex-start;
 }
 #galaxy-controls {
@@ -171,6 +171,11 @@ const twinkleTogglerText = computed(() => {
     padding: 5px 7px;
   }
 }
+@media screen and (max-width: 1000px) {
+  #galaxy-control-section {
+    left: 5px;
+  }
+}
 @media screen and (max-width: 800px) {
   #galaxy-control-section {
     bottom: 0;
@@ -185,6 +190,14 @@ const twinkleTogglerText = computed(() => {
   }
   #galaxy-controls button {
     font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 358px) {
+  .toggle-container {
+    margin-bottom: 10px;
+  }
+  #galaxy-controls {
+    transform: translateY(110px);
   }
 }
 </style>
