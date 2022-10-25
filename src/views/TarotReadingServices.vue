@@ -117,6 +117,20 @@
         surrounding a given person, environment, or situation that can help you
         better plan your future accordingly.
       </p>
+      <h3><em>tips are optional and always appreciated!</em></h3>
+    </section>
+    <section>
+      <h2>Discount Policies</h2>
+      <p>
+        My services are available at Discounted Rates on my
+        <a href="https://ko-fi.com/crescat/">ko-fi page</a> (there are Monthly
+        Membership Tiers and Commissions)
+      </p>
+      <p>
+        Sliding scale options are available to queer folks struggling to make
+        ends meet. Please ask about my adjusted rates if you are facing
+        financial hardship.
+      </p>
     </section>
     <section>
       <h2>Tarot Reading Events</h2>
@@ -155,5 +169,14 @@ import Portrait from "@/components/ui/Portrait.vue";
 section {
   border-top: 9px solid rgb(96, 97, 170);
   border-bottom: 5px solid rgb(116, 114, 252);
+}
+em {
+  display: block;
+  width: 100%;
+  font-style: italic;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  margin-top: 12vh;
+  margin-bottom: 10vh;
 }
 </style>
