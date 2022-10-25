@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="space">
+    <div id="space" role="presentation">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -79,6 +79,7 @@ function generateStar(
   birthInterval: number,
   starSelection: d3.Selection<BaseType, unknown, HTMLElement, any>
 ) {
+  if (exists.value !== true) return;
   if (!newStar.empty()) {
     newStar.classed("new", false);
   }
@@ -106,9 +107,10 @@ function toggleExistence() {
     starCount = 0;
     exists.value = false;
   } else {
-    generateStar(starCycle, stars);
     exists.value = true;
+    generateStar(starCycle, stars);
   }
+  localStorage.setItem("galaxy-exists", String(exists.value));
 }
 
 function toggleGalaxyMotion() {
@@ -124,7 +126,7 @@ function toggleGalaxyMotion() {
       moving.value = true;
     }
   }
-  console.log(galaxy);
+  localStorage.setItem("galaxy-moving", String(moving.value));
 }
 
 function toggleTwinkle() {
@@ -135,6 +137,7 @@ function toggleTwinkle() {
     // logEventToUser("They twinkle again");
     twinkling.value = true;
   }
+  localStorage.setItem("galaxy-twinkling", String(twinkling.value));
 }
 
 // Helper functions
@@ -150,7 +153,28 @@ function starColor() {
   return pallette[Math.floor(Math.random() * 7)];
 }
 
+// Local storage interfacing
+function loadUserPreferences() {
+  const existsPref = localStorage.getItem("galaxy-exists"),
+    movingPref = localStorage.getItem("galaxy-moving"),
+    twinklingPref = localStorage.getItem("galaxy-twinkling");
+  if (existsPref && existsPref === "false") {
+    exists.value = false;
+  }
+  if (movingPref && movingPref === "false") {
+    moving.value = false;
+    if (galaxy.value) {
+      galaxy.value.pauseAnimations();
+    }
+  }
+  if (twinklingPref && twinklingPref === "false") {
+    twinkling.value = false;
+  }
+}
+
 onMounted(() => {
+  loadUserPreferences();
+
   (space = d3.select("#space")), (stars = space.select("#stars"));
 
   newStar = stars.select(".new.star");
