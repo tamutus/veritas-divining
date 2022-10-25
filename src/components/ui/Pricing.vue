@@ -1,8 +1,10 @@
 <template>
-  <div class="pricing">
-    <img src="/NASA_Hubble_Orion.jpg" />
-    <h2 class="item"><slot></slot></h2>
-    <h2 class="cost">{{ addOn ? "+ " : "" }}${{ cost }}.00</h2>
+  <div class="pricing-container">
+    <div class="pricing">
+      <img src="/NASA_Hubble_Orion.jpg" />
+      <h2 class="item"><slot></slot></h2>
+      <h2 class="cost">{{ addOn ? "+ " : "" }}${{ cost }}.00</h2>
+    </div>
   </div>
 </template>
 
@@ -17,12 +19,20 @@ const props = defineProps({
 </script>
 
 <style scoped>
+.pricing-container {
+  margin: 75px auto 40px auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
 .pricing {
   position: relative;
-  margin: 75px 30px 40px 30px;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-grow: 1;
+  flex-flow: column nowrap;
+  align-items: center;
+  align-content: center;
   padding: 30px 40px;
 }
 img {
@@ -43,12 +53,12 @@ img {
 }
 .item {
   font-weight: 600;
+  line-height: 0.8em;
 }
 .cost {
-  margin-left: auto;
   padding-left: 15px;
-  font-weight: 700px;
-  align-self: flex-end;
+  font-weight: 600px;
+  line-height: 0.8em;
 }
 h2 {
   z-index: 2;
