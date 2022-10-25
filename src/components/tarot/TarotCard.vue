@@ -28,13 +28,14 @@ function turn() {
   position: relative;
   height: 400px;
   width: 250px;
-  transition: transform 0.5s ease, scale 1s ease;
+  transition: rotate 0.5s ease, scale 1s ease, filter 0.4s ease;
   transform-origin: center;
   -webkit-transform-style: preserve-3d;
   perspective: 1000px;
 }
 .card.turned {
-  transform: rotateY(-180deg) scale(1.5);
+  rotate: y -180deg;
+  scale: 1.5;
 }
 .card .back,
 .card .front {
