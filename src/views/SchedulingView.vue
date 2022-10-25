@@ -10,6 +10,19 @@
         Soon, I will share a calendar here where you can directly book an
         appointment with me.
       </h3>
+      <div class="thin">
+        <Quote>
+          <h3>
+            <a href="https://paypal.me/Feykitty">My PayPal</a>
+          </h3>
+        </Quote>
+        <Quote>
+          <h3>
+            For Zelle,
+            <a href="mailto:daikon.Daiko@gmail.com">inquire by email</a>
+          </h3>
+        </Quote>
+      </div>
     </section>
     <section>
       <Quote>
@@ -18,6 +31,9 @@
           <ol>
             <li>
               Peruse my <router-link to="/services">Services</router-link>
+            </li>
+            <li>
+              Read my <router-link to="/disclaimer">Disclaimer</router-link>
             </li>
             <li>
               See my advice on
@@ -39,5 +55,7 @@ import Quote from "@/components/ui/Quote.vue";
 <style scoped>
 li {
   line-height: 2em;
+}
+h3 {
 }
 </style>

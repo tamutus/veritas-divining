@@ -31,6 +31,17 @@
         platforms. Cres Veritas is not liable for any mishandling by these third
         party platforms.
       </p>
+      <div class="thin">
+        <Quote>
+          <h3>
+            <a href="https://paypal.me/Feykitty">My PayPal</a>
+          </h3>
+          <h3>
+            For Zelle,
+            <a href="mailto:daikon.Daiko@gmail.com">inquire by email</a>
+          </h3>
+        </Quote>
+      </div>
 
       <p>
         For in-person readings, cash is preferred- you may still pay using the
@@ -155,7 +166,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Quote from "@/components/ui/Quote.vue";
+</script>
 
 <style scoped>
 section {

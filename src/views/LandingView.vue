@@ -47,12 +47,12 @@ const mainPages = [
     link: "/services",
   },
   {
-    title: "How to Ask",
-    link: "/good-question",
+    title: "What Others Are Saying",
+    link: "/testimonials",
   },
   {
     title: "Book a Reading",
-    link: "/schedule",
+    link: "/bookings",
   },
 ];
 </script>

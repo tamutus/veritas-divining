@@ -70,7 +70,9 @@
     <section>
       <h2>Interactive Readings:</h2>
 
-      <h3>Tarot with Youtube</h3>
+      <ul>
+        <li><a href="https://tarot.withyoutube.com/">Tarot with Youtube</a></li>
+      </ul>
     </section>
     <section>
       <h2>Apps</h2>
