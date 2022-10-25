@@ -1,19 +1,38 @@
 <template>
-  <div id="galaxy-control-section" :class="controlsStatus">
+  <div id="galaxy-control-section" :class="controlsStatus" role="presentation">
     <div class="toggle-container">
-      <button class="toggler" @click="toggleControlsSalience">
+      <button
+        class="toggler"
+        @click="toggleControlsSalience"
+        :aria-label="
+          !controlsSalient
+            ? 'Reveal controls for background galaxy'
+            : 'Hide controls for background galaxy'
+        "
+      >
         {{ toggleIcon }}
       </button>
       <p>Ask the galaxy {{ controlsSalient ? "to:" : "..." }}</p>
     </div>
-    <div id="galaxy-controls">
-      <button @click="emit('resetAnimation')">
+    <div id="galaxy-controls" :aria-hidden="!controlsSalient">
+      <button
+        :tabindex="controlsSalient ? '0' : '-1'"
+        @click="emit('resetAnimation')"
+      >
         {{ existenceTogglerText }}
       </button>
-      <button id="motion-toggler" @click="emit('toggleGalaxyMotion')">
+      <button
+        id="motion-toggler"
+        @click="emit('toggleGalaxyMotion')"
+        :tabindex="controlsSalient ? '0' : '-1'"
+      >
         {{ motionTogglerText }}
       </button>
-      <button id="twinkle-toggler" @click="emit('toggleTwinkle')">
+      <button
+        id="twinkle-toggler"
+        @click="emit('toggleTwinkle')"
+        :tabindex="controlsSalient ? '0' : '-1'"
+      >
         {{ twinkleTogglerText }}
       </button>
     </div>
@@ -101,7 +120,8 @@ const twinkleTogglerText = computed(() => {
   background-size: 100% 200%;
   font-size: 2em;
 }
-.toggler:hover {
+.toggler:hover,
+.toggler:focus {
   opacity: 1;
 }
 .toggle-container p {

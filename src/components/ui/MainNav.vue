@@ -1,18 +1,30 @@
 <template>
-  <nav>
-    <router-link
-      v-for="menuItem of menuItems"
-      :class="`menu-item ${menuItem.link === currentPath ? 'focused' : ''}`"
-      :to="menuItem.link"
-      >{{ menuItem.title }}</router-link
+  <div>
+    <button @click="toggleMenu">
+      <span aria-hidden="true" style="margin-right: 1rem">≡</span>
+      {{ menuHidden ? "Show" : "Hide" }} Menu
+    </button>
+    <nav
+      role="navigation"
+      :class="menuHidden ? 'hidden' : ''"
+      :aria-hidden="menuHidden"
     >
-  </nav>
+      <router-link
+        v-for="menuItem of menuItems"
+        :class="`menu-item ${menuItem.link === currentPath ? 'focused' : ''}`"
+        :to="menuItem.link"
+        :tabindex="menuHidden ? '-1' : '0'"
+        >{{ menuItem.title }}</router-link
+      >
+    </nav>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
+const menuHidden = ref(false);
 const route = useRoute();
 const currentPath = ref(route.path);
 
@@ -34,8 +46,8 @@ const menuItems = [
     link: "/services",
   },
   {
-    title: "Schedule",
-    link: "/schedule",
+    title: "Bookings",
+    link: "/bookings",
   },
   {
     title: "Tarot",
@@ -46,6 +58,18 @@ const menuItems = [
     link: "/ethics",
   },
 ];
+
+function toggleMenu() {
+  menuHidden.value = !menuHidden.value;
+  localStorage.setItem("menu-hidden", String(menuHidden.value));
+}
+
+onMounted(() => {
+  const menuPref = localStorage.getItem("menu-hidden");
+  if (menuPref) {
+    menuHidden.value = menuPref === "true";
+  }
+});
 </script>
 
 <style scoped>
@@ -67,6 +91,14 @@ nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  transition: opacity 0.8s, height 0.6s;
+  transition-timing-function: cubic-bezier(1, 0.6, 0.435, 0.865);
+}
+nav.hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  transition: opacity 0.8s, height 0.5s 0.1s;
 }
 .menu-item {
   margin: 0 5px 15px 5px;
@@ -90,19 +122,56 @@ nav {
   background-position: 0px 115%;
   color: white;
 }
+button {
+  z-index: 5;
+  position: fixed;
+  top: 70px;
+  left: 3rem;
+  width: 40px;
+  padding-left: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.25s ease-in-out;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(78, 115, 236) 15%,
+    rgb(114, 55, 192) 55%,
+    rgb(21, 159, 177) 90%
+  );
+  /* font-family: "Comfortaa", cursive; */
+  color: rgb(250, 203, 252);
+}
+button:focus,
+button:hover {
+  width: 155px;
+}
 @media screen and (max-width: 1000px) {
   nav {
     width: 100vw;
     height: 45px;
     left: 0;
   }
+  button {
+    top: 60px;
+    left: 10px;
+  }
+
   .menu-item {
     padding: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  button {
+    padding-left: 1.5em;
   }
 }
 @media screen and (max-width: 500px) {
   nav {
     height: 39px;
+  }
+  button {
+    top: 54px;
+    left: 0px;
   }
   .menu-item {
     margin: 0 2px 15px 2px;
