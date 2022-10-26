@@ -8,7 +8,7 @@
         <li>Third parties and/or others without their consent</li>
         <li>Medical or Death-related Queries</li>
         <li>Past/Future Lives</li>
-        <li>large Legal Matters</li>
+        <li>Large Legal Matters</li>
         <li>
           "What will the outcome be?" or other Future-related/Fortune-teller
           type Queries; instead, be proactive and ask how best you can make

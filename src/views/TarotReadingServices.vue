@@ -108,17 +108,20 @@
         clarify that point
       </p>
 
-      <Pricing cost="36" :add-on="true"> ADD ON: Six Month Projection </Pricing>
-      <p>
-        In addition to a reading service, you can request an additional spread
-        to provide a six month projection of what is up ahead. While the future
-        is never fixed and predictive accuracy cannot be guaranteed, the six
-        month projection does offer insights into the metaphysical energies
-        surrounding a given person, environment, or situation that can help you
-        better plan your future accordingly.
-      </p>
       <h3><em>tips are optional and always appreciated!</em></h3>
     </section>
+
+    <section>
+      <button @click="showDisclaimer"><h2>Disclaimer</h2></button>
+      <Modal
+        v-show="disclaimerIsOpen"
+        @close="closeDisclaimer"
+        :is-open="disclaimerIsOpen"
+      >
+        <Disclaimer></Disclaimer>
+      </Modal>
+    </section>
+
     <section>
       <h2>Discount Policies</h2>
       <p>
@@ -160,9 +163,25 @@
 </template>
 
 <script setup lang="ts">
+import { ref, Ref } from "vue";
+
+// UI Components
 import Quote from "@/components/ui/Quote.vue";
 import Pricing from "@/components/ui/Pricing.vue";
 import Portrait from "@/components/ui/Portrait.vue";
+import Modal from "@/components/ui/Modal.vue";
+
+// View Components
+import Disclaimer from "@/views/Disclaimer.vue";
+
+// Modal Handling
+const disclaimerIsOpen: Ref<boolean> = ref(false);
+function showDisclaimer(): void {
+  disclaimerIsOpen.value = true;
+}
+function closeDisclaimer(): void {
+  disclaimerIsOpen.value = false;
+}
 </script>
 
 <style scoped>

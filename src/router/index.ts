@@ -90,7 +90,7 @@ const router = createRouter({
         } else {
           resolve({ top: 0, left: 0 });
         }
-      }, 700);
+      }, 600);
     });
   },
 });

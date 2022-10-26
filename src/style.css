@@ -149,6 +149,9 @@ button:focus-visible {
   margin-bottom: 12vh;
   overflow-x: hidden;
 }
+#app.frozen {
+  padding-right: 27px;
+}
 section {
   margin: 0;
   border: 20px solid transparent;
@@ -227,6 +230,9 @@ footer p:first-child {
   }
   #app {
     padding: 0 5px;
+  }
+  #app.frozen {
+    padding-right: 22px;
   }
 }
 @media screen and (max-width: 450px) {

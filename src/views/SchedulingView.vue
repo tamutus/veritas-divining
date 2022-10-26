@@ -3,13 +3,11 @@
     <h1>Schedule a Reading with Mx. Cres</h1>
     <section>
       <h2>
-        Please <a href="mailto:daikon.Daiko@gmail.com">email me</a> to set up an
-        appointment
+        <button @click="showCal" id="booker">Book Now</button>
       </h2>
-      <h3>
-        Soon, I will share a calendar here where you can directly book an
-        appointment with me.
-      </h3>
+      <Modal v-show="calIsOpen" @close="closeCal" :is-open="calIsOpen">
+        <AppointmentScheduler></AppointmentScheduler>
+      </Modal>
       <div class="thin">
         <Quote>
           <h3>
@@ -32,9 +30,7 @@
             <li>
               Peruse my <router-link to="/services">Services</router-link>
             </li>
-            <li>
-              Read my <router-link to="/disclaimer">Disclaimer</router-link>
-            </li>
+            <li>Read my <a @click="showDisclaimer">Disclaimer</a></li>
             <li>
               See my advice on
               <router-link to="/good-question"
@@ -44,18 +40,57 @@
           </ol>
         </h3>
       </Quote>
+      <Modal
+        v-show="disclaimerIsOpen"
+        @close="closeDisclaimer"
+        :is-open="disclaimerIsOpen"
+      >
+        <Disclaimer></Disclaimer>
+      </Modal>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, Ref } from "vue";
+
+// UI Components
 import Quote from "@/components/ui/Quote.vue";
+import Modal from "@/components/ui/Modal.vue";
+
+// View Components
+import Disclaimer from "@/views/Disclaimer.vue";
+import AppointmentScheduler from "@/components/booking/AppointmentScheduler.vue";
+
+// Modal Handling
+const calIsOpen: Ref<boolean> = ref(false);
+function showCal(): void {
+  calIsOpen.value = true;
+}
+function closeCal(): void {
+  calIsOpen.value = false;
+}
+
+const disclaimerIsOpen: Ref<boolean> = ref(false);
+function showDisclaimer(): void {
+  disclaimerIsOpen.value = true;
+}
+function closeDisclaimer(): void {
+  disclaimerIsOpen.value = false;
+}
 </script>
 
 <style scoped>
 li {
   line-height: 2em;
 }
-h3 {
+#booker {
+  margin-bottom: 50px;
+  background-color: rgb(77, 164, 91);
+  transition: background-color 0.4s ease;
+}
+#booker:hover,
+#booker:focus {
+  background-color: rgb(78, 201, 25);
 }
 </style>

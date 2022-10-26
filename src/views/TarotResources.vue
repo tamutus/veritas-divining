@@ -92,18 +92,17 @@
       <h3>Other folks to consider if I am not available:</h3>
       <ul>
         <li>
-          <a href="http://bunifaye.carrd.co/#links">Buni</a> –
+          <a href="http://bunifaye.carrd.co/#links">Rowan</a> — they/he
           <a href="https://twitter.com/BuniFaye/status/1231625038920605696"
             >(twitter details)</a
           >
         </li>
-        <li>
-          <a href="https://marcelletarot.carrd.co/">Sea</a>
-        </li>
+        <li><a href="https://marcelletarot.carrd.co/">Sea</a> — fae/he</li>
         <li>
           <a href="https://twitter.com/MaeB_Cute/status/1573990004983988229"
             >Mae</a
           >
+          — she/her
         </li>
       </ul>
     </section>
