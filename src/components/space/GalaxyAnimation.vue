@@ -70,7 +70,14 @@ let space: d3.Selection<BaseType, unknown, HTMLElement, any>,
 // Dynamic variables, counters
 let starCount: number = 0,
   nebula: NodeJS.Timeout, // tracks timeouts so the animation can be reset
-  exists: Ref<boolean> = ref(true),
+  // Turn off for mobile by default
+  exists: Ref<boolean> = ref(
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+      ? false
+      : true
+  ),
   moving: Ref<boolean> = ref(true),
   twinkling: Ref<boolean> = ref(true);
 
