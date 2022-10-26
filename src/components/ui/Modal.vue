@@ -24,7 +24,6 @@ const props = defineProps({
 watch(
   () => props.isOpen,
   async () => {
-    console.log(props.isOpen);
     if (props.isOpen) {
       const scrollY = `${window.scrollY}px`;
       document.body.style.position = "fixed";
@@ -45,22 +44,6 @@ watch(
     }
   }
 );
-// const disclaimerIsOpen: Ref<boolean> = ref(false);
-// function showDisclaimer(): void {
-//   disclaimerIsOpen.value = true;
-//   const scrollY = `${window.scrollY}px`;
-//   console.log(scrollY);
-//   document.body.style.position = "fixed";
-//   document.body.style.top = `-${scrollY}`;
-// }
-// function closeDisclaimer(): void {
-//   disclaimerIsOpen.value = false;
-//   const scrollY = document.body.style.top;
-//   console.log(scrollY);
-//   document.body.style.position = "";
-//   document.body.style.top = "";
-//   window.scrollTo(0, parseInt(scrollY || "0") * -1);
-// }
 </script>
 
 <style scoped>

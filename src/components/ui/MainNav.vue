@@ -31,7 +31,6 @@ const currentPath = ref(route.path);
 watch(
   () => route.path,
   async (newPath) => {
-    console.log(newPath);
     currentPath.value = newPath;
   }
 );
