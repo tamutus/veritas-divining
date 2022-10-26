@@ -105,7 +105,7 @@ const twinkleTogglerText = computed(() => {
 }
 .toggler {
   position: absolute;
-  left: 7px;
+  left: 5px;
   bottom: -3px;
   width: 110px;
   padding: 0.4em 1em;
@@ -206,7 +206,7 @@ const twinkleTogglerText = computed(() => {
     font-size: 1.2em;
   }
   .toggler {
-    width: 92px;
+    width: 95px;
   }
   #galaxy-controls button {
     font-size: 1.5em;
