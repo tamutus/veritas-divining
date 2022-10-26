@@ -125,14 +125,15 @@
     <section>
       <h2>Discount Policies</h2>
       <p>
-        My services are available at Discounted Rates on my
-        <a href="https://ko-fi.com/crescat/">ko-fi page</a> (there are Monthly
-        Membership Tiers and Commissions)
-      </p>
-      <p>
         Sliding scale options are available to queer folks struggling to make
         ends meet. Please ask about my adjusted rates if you are facing
         financial hardship.
+      </p>
+      <p>
+        Also, my
+        <a href="https://ko-fi.com/cattyfae/tiers">Monthly Membership Tiers</a>
+        are available at a Discounted Rate via my
+        <a href="https://ko-fi.com/cattyfae">ko-fi page</a>.
       </p>
     </section>
     <section>
