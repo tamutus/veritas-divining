@@ -98,12 +98,6 @@
           >
         </li>
         <li><a href="https://marcelletarot.carrd.co/">Sea</a> — fae/he</li>
-        <li>
-          <a href="https://twitter.com/MaeB_Cute/status/1573990004983988229"
-            >Mae</a
-          >
-          — she/her
-        </li>
       </ul>
     </section>
   </div>
