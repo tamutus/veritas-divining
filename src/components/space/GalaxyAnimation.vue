@@ -6,6 +6,7 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         id="galaxy"
         ref="galaxy"
+        viewBox="0 0 600 350"
       >
         <g id="stars" :class="twinkling ? 'twinkling' : ''">
           <animateTransform
@@ -41,8 +42,8 @@
 
 <script setup lang="ts">
 import * as d3 from "d3";
+import { onMounted, ref } from "vue";
 import type { BaseType } from "d3";
-import { computed, onMounted, ref } from "vue";
 import type { Ref } from "vue";
 
 import GalaxyControls from "@/components/space/GalaxyControls.vue";
@@ -209,7 +210,8 @@ onMounted(() => {
   overflow: visible;
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 15%;
+  height: 50vh;
 }
 
 .star {
