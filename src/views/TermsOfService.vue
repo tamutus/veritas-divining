@@ -23,22 +23,17 @@
       <h3>Payment Methods</h3>
 
       <p>
-        For online readings, Cres Veritas accepts PayPal or Zelle. All payment
-        transfers are done through the third party platforms
-        <a href="https://www.paypal.com">PayPal</a> and
-        <a href="https://www.zellepay.com/">Zelle</a>, so please be familiar
-        with the privacy policy and terms of use for these third party
-        platforms. Cres Veritas is not liable for any mishandling by these third
-        party platforms.
+        For online readings, all payment transfers are done through the third
+        party platform
+        <a href="https://www.paypal.com">PayPal</a>, so please be familiar with
+        the privacy policy and terms of use for these third party platforms.
+        Cres Veritas is not liable for any mishandling by these third party
+        platforms.
       </p>
       <div class="thin">
         <Quote>
           <h3>
             <a href="https://paypal.me/Feykitty">My PayPal</a>
-          </h3>
-          <h3>
-            For Zelle,
-            <a href="mailto:daikon.Daiko@gmail.com">inquire by email</a>
           </h3>
         </Quote>
       </div>

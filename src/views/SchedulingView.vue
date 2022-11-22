@@ -16,8 +16,7 @@
         </Quote>
         <Quote>
           <h3>
-            For Zelle,
-            <a href="mailto:daikon.Daiko@gmail.com">inquire by email</a>
+            For my email address, click the @ in the top left of the screen.
           </h3>
         </Quote>
       </div>

@@ -6,22 +6,10 @@ const routes = [
     redirect: "/home",
   },
   {
-    path: "/home",
-    name: "Veritas Divining",
+    path: "/bookings",
+    name: "Book a reading",
     category: "Veritas Services",
-    component: () => import("@/views/LandingView.vue"),
-  },
-  {
-    path: "/services",
-    name: "Services",
-    category: "Veritas Services",
-    component: () => import("@/views/TarotReadingServices.vue"),
-  },
-  {
-    path: "/terms-of-service",
-    name: "Terms of Service",
-    category: "Veritas Services",
-    component: () => import("@/views/TermsOfService.vue"),
+    component: () => import("@/views/SchedulingView.vue"),
   },
   {
     path: "/disclaimer",
@@ -36,28 +24,16 @@ const routes = [
     component: () => import("@/views/DivinationSpecifics.vue"),
   },
   {
+    path: "/ethics",
+    name: "Ethics",
+    category: "Reference",
+    component: () => import("@/views/CodeOfConduct.vue"),
+  },
+  {
     path: "/good-question",
     name: "Good Questions",
     category: "Reference",
     component: () => import("@/views/GoodQuestions.vue"),
-  },
-  {
-    path: "/bookings",
-    name: "Schedule a reading",
-    category: "Veritas Services",
-    component: () => import("@/views/SchedulingView.vue"),
-  },
-  {
-    path: "/tarot",
-    name: "Tarot",
-    category: "Reference",
-    component: () => import("@/views/TarotHub.vue"),
-  },
-  {
-    path: "/testimonials",
-    name: "Testimonials",
-    category: "Veritas Services",
-    component: () => import("@/views/Testimonials.vue"),
   },
   {
     path: "/resources",
@@ -66,10 +42,34 @@ const routes = [
     component: () => import("@/views/TarotResources.vue"),
   },
   {
-    path: "/ethics",
-    name: "Ethics",
+    path: "/services",
+    name: "Services",
+    category: "Veritas Services",
+    component: () => import("@/views/TarotReadingServices.vue"),
+  },
+  {
+    path: "/tarot",
+    name: "Tarot",
     category: "Reference",
-    component: () => import("@/views/CodeOfConduct.vue"),
+    component: () => import("@/views/TarotHub.vue"),
+  },
+  {
+    path: "/terms-of-service",
+    name: "Terms of Service",
+    category: "Veritas Services",
+    component: () => import("@/views/TermsOfService.vue"),
+  },
+  {
+    path: "/testimonials",
+    name: "Testimonials",
+    category: "Veritas Services",
+    component: () => import("@/views/Testimonials.vue"),
+  },
+  {
+    path: "/home",
+    name: "Veritas Divining",
+    category: "Veritas Services",
+    component: () => import("@/views/LandingView.vue"),
   },
   //wildcard
   {

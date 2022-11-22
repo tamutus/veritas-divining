@@ -1,9 +1,15 @@
 <template>
   <div>
-    <button @click="toggleMenu">
-      <span aria-hidden="true" style="margin-right: 1rem">≡</span>
-      {{ menuHidden ? "Show" : "Hide" }} Menu
-    </button>
+    <div class="buttons">
+      <button @click="toggleMenu">
+        <span aria-hidden="true" style="margin-right: 1rem">≡</span>
+        {{ menuHidden ? "Show" : "Hide" }} Menu
+      </button>
+      <button @click="presentEmail">
+        <span aria-hidden="true" style="margin-right: 1rem">@</span>
+        Email me
+      </button>
+    </div>
     <nav
       role="navigation"
       :class="menuHidden ? 'hidden' : ''"
@@ -17,6 +23,11 @@
         >{{ menuItem.title }}</router-link
       >
     </nav>
+    <Modal v-show="emailPresented" @close="hideEmail" :isOpen="emailPresented">
+      <h1 v-if="emailPresented">
+        <a href="mailto:CresVeritas@gmail.com">CresVeritas@gmail.com</a>
+      </h1>
+    </Modal>
   </div>
 </template>
 
@@ -24,9 +35,19 @@
 import { onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
+import Modal from "@/components/ui/Modal.vue";
+
 const menuHidden = ref(false);
+const emailPresented = ref(false);
 const route = useRoute();
 const currentPath = ref(route.path);
+
+function presentEmail() {
+  emailPresented.value = true;
+}
+function hideEmail() {
+  emailPresented.value = false;
+}
 
 watch(
   () => route.path,
@@ -72,6 +93,19 @@ onMounted(() => {
 </script>
 
 <style scoped>
+h1 {
+  margin-top: 30vh;
+}
+@media screen and (max-width: 850px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 1.5em;
+  }
+}
 nav {
   z-index: 5;
   position: fixed;
@@ -121,11 +155,16 @@ nav.hidden {
   background-position: 0px 115%;
   color: white;
 }
-button {
+.buttons {
   z-index: 5;
   position: fixed;
   top: 70px;
   left: 3rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+button {
+  margin-bottom: 20px;
   width: 40px;
   padding-left: 1rem;
   overflow: hidden;
@@ -140,9 +179,16 @@ button {
   /* font-family: "Comfortaa", cursive; */
   color: rgb(250, 203, 252);
 }
+button:nth-of-type(2) {
+  padding-left: 0.75rem;
+}
 button:focus,
 button:hover {
   width: 155px;
+}
+button:nth-of-type(2):focus,
+button:nth-of-type(2):hover {
+  width: 145px;
 }
 @media screen and (max-width: 1000px) {
   nav {
