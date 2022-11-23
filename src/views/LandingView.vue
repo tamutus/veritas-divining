@@ -15,17 +15,17 @@
     </section>
     <section id="bio">
       <p>
-        You may know me from elsewhere on the internet as
-        <a href="https://twitter.com/cattyfae">@CattyFae</a>, or
-        <a href="https://twitter.com/veritasdivining">@VeritasDivining</a>; I am
-        a trans, non-binary, agender, ace, Filipino American Tarot Practitioner,
-        as well as a Pagan Witch.
+        You may know me from elsewhere on and offline as “CattyFae” or
+        “Feykitty”, and if you didn’t before, now you do! I am a non-binary,
+        agender, asexual, Bi, Filipino American, Tarot Practitioner, as well as
+        a Pagan Witch.
       </p>
       <p>
-        I have been Reading Tarot since June 2016, so it has been 6 years and
-        counting so far on my Tarot Journey. Thank you so much for visiting my
-        website, I’m glad to make your acquaintance and am gladly at your
-        service as a Diviner.
+        Regarding my Tarot Experience, I have more than 6 years worth of it
+        since I have been Reading since June 2016. I love Reading Cards as it is
+        a way to do self-reflection and gain insight into things in one’s
+        subconscious. I would love to Read for you and other folks too! So know
+        that I am gladly at your service as a Diviner.
       </p>
     </section>
     <section id="business-overview">
