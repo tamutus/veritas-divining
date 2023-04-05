@@ -113,7 +113,7 @@ for (const route of routes) {
 }
 
 const siteMap = cleanRoutes.reduce(
-  (categorized: { [key: string]: any[] }, route: cleanRoute) => {
+  (categorized: { [key: string]: cleanRoute[] }, route: cleanRoute) => {
     if (typeof route?.category === "string") {
       if (!Object.keys(categorized).includes(route.category)) {
         return {

@@ -24,19 +24,11 @@
 
       <p>
         For online readings, all payment transfers are done through the third
-        party platform
-        <a href="https://www.paypal.com">PayPal</a>, so please be familiar with
-        the privacy policy and terms of use for these third party platforms.
-        Cres Veritas is not liable for any mishandling by these third party
+        party platform PayPal (inquire by email), so please be familiar with the
+        privacy policy and terms of use for these third party platforms. Cres
+        Veritas is not liable for any mishandling by these third party
         platforms.
       </p>
-      <div class="thin">
-        <Quote>
-          <h3>
-            <a href="https://paypal.me/Feykitty">My PayPal</a>
-          </h3>
-        </Quote>
-      </div>
 
       <p>
         For in-person readings, cash is preferred- you may still pay using the

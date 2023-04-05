@@ -44,12 +44,12 @@ import SiteMap from "./components/ui/SiteMap.vue";
 .flipfade-leave-active {
   transition: opacity 0.6s, transform 0.6s;
 }
-/* ensure leaving items are taken out of layout flow so that moving
-   animations can be calculated correctly. */
 .flipfade-enter-active {
   transform-origin: center top;
   transition: opacity 1.4s 0.6s, transform 0.8s 0.6s;
 }
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
 .flipfade-leave-active {
   position: absolute;
   transform-origin: center top;

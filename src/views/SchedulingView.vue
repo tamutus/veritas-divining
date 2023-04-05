@@ -11,11 +11,6 @@
       <div class="thin">
         <Quote>
           <h3>
-            <a href="https://paypal.me/Feykitty">My PayPal</a>
-          </h3>
-        </Quote>
-        <Quote>
-          <h3>
             For my email address, click the @ in the top left of the screen.
           </h3>
         </Quote>
