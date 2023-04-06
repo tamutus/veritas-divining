@@ -36,7 +36,7 @@
       </p> -->
     </section>
     <section>
-      <Pricing cost="15"> One, Three-Card Tarot Reading </Pricing>
+      <Pricing cost="20"> One, Three-Card Tarot Reading </Pricing>
       <h3>
         Do you want to know what you should and should not do for a specific
         situation?
@@ -47,7 +47,7 @@
       </p>
     </section>
     <section>
-      <Pricing cost="25"> One, Five-Card Tarot Reading </Pricing>
+      <Pricing cost="30"> One, Five-Card Tarot Reading </Pricing>
       <Portrait
         image-file-name="Spread on red.jpg"
         alt-text="Tarot cards, face-down, in a Cross of truth "
