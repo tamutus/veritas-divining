@@ -4,6 +4,7 @@
       <img src="/NASA_Hubble_Orion.jpg" />
       <h2 class="item"><slot></slot></h2>
       <h2 class="cost">{{ addOn ? "+ " : "" }}${{ cost }}.00</h2>
+      <slot name="description"></slot>
     </div>
   </div>
 </template>

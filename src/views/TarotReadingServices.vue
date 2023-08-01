@@ -12,6 +12,12 @@
           Want some background on Tarot? Curious about other spreads I do?
           <router-link to="/divination">Click Here</router-link>
         </p>
+        <p>
+          I offer additional
+          <router-link to="#mundane">mundane services</router-link> for those
+          who would best be served without Magick or Divination, including
+          notarization.
+        </p>
       </Quote>
     </section>
 
@@ -159,6 +165,25 @@
         </div>
       </Quote>
     </section>
+
+    <section id="mundane">
+      <h2>Mundane Services</h2>
+      <h3>Layperson Consultation</h3>
+      <p>
+        Seeking advice outside the context of Magick and Divination? I would be
+        glad to offer insight and perspective on a topic of your choice.
+      </p>
+      <Quote>
+        <h4>$15 for 30 minutes</h4>
+      </Quote>
+      <h3>Notarization Services</h3>
+      <p>
+        As a Notary Public, I Notarize Paperwork and marry consenting adults in
+        the state of Florida while I reside here.
+      </p>
+      <Quote><h4>Prices vary by travel time and other variables</h4></Quote>
+    </section>
+
     <h2><router-link to="/terms-of-service">Terms of Service</router-link></h2>
   </div>
 </template>

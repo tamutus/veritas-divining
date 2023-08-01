@@ -17,8 +17,8 @@
       <p>
         You may know me from elsewhere on and offline as “CattyFae” or
         “Feykitty”, and if you didn’t before, now you do! I am a non-binary,
-        agender, asexual, Bi, Filipino American, Tarot Practitioner, as well as
-        a Pagan Witch.
+        agender, asexual, Bi, Filipino American, Tarot Practitioner, Notary
+        Public, as well as a Pagan Witch.
       </p>
       <p>
         Regarding my Tarot Experience, I have more than 6 years worth of it
