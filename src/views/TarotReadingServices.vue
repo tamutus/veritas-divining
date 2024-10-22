@@ -53,7 +53,7 @@
       </p>
     </section>
     <section>
-      <Pricing cost="30"> One, Five-Card Tarot Reading </Pricing>
+      <Pricing cost="50"> One, Five-Card Tarot Reading </Pricing>
       <Portrait
         image-file-name="Spread on red.jpg"
         alt-text="Tarot cards, face-down, in a Cross of truth "
